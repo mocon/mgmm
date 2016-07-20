@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import ReportSection from './partials/ReportSection';
+
+var BarChart = require('react-chartjs').Bar;
+
 var Review = React.createClass({
     componentDidMount: function() {
         window.scrollTo(0, 0);
@@ -8,6 +12,13 @@ var Review = React.createClass({
     },
     render: function() {
         let reportType = "Advertising";
+        let sectionsInReport = [
+            {name: "First Section"},
+            {name: "Second Section"},
+            {name: "Third Section"},
+            {name: "Fourth Section"},
+            {name: "Fifth Section"}
+        ];
 
         return (
             <div>
@@ -42,30 +53,14 @@ var Review = React.createClass({
                     </div>
                 </section>
 
-                {/* Section 1 header, needs [category name] */}
-                <section className="-p-a-4 bg--color-1 text--white">
-                    <div className="gds-layout__container">
-                        <div className="gds-layout__row">
-                            <div className="gds-layout__column--sm-12 -text-center">
-                                <h3 className="gds-text--header-md gds-text--bold text--uppercase">[Category name] goes here</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {/* Section 1 content, needs [graph content], & [analysis] */}
-                <section className="-p-a-4">
-                    <div className="gds-layout__container">
-                        <div className="gds-layout__row">
-                            <div className="gds-layout__column--md-8">
-                                <p>[Graph] goes here</p>
-                            </div>
-                            <div className="gds-layout__column--md-4">
-                                <h3 className="gds-text--header-sm gds-text--bold text--uppercase -m-b-2">Analysis</h3>
-                                <p>[Analysis] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* Loop through sections in report and render them */}
+                {sectionsInReport.map(function(section, i) {
+                    let themeIndex = i + 1;
+
+                    return (
+                        <ReportSection key={i} themeId={i} themeClassName={`color-${themeIndex}`} />
+                    )
+                })}
 
                 {/* Footer logo section, doesn't need any data */}
                 <section className="-p-a-4 bg--color-1">
