@@ -8,7 +8,7 @@ var BarChart = require('react-chartjs').Bar;
 var Review = React.createClass({
     componentDidMount: function() {
         window.scrollTo(0, 0);
-        document.body.className = '';
+        document.body.className = 'bg--white';
     },
     render: function() {
         let reportType = "Advertising";

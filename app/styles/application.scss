@@ -2,6 +2,10 @@
 $gg-gold: #fcb420;
 $gg-gray: #818182;
 
+$gray-dark: #413f41;
+$gray-medium: #808183;
+$gray-light: #ccc;
+
 $color-1: #f0515a;
 $color-2: #00b4aa;
 $color-3: #545487;
@@ -11,6 +15,11 @@ $color-5: #00acc8;
 // Backgrounds
 .bg--white {background-color: white;}
 .bg--trans-dark-1 {background-color: rgba(0,0,0,0.8);}
+
+.bg--gray-dark {background-color: $gray-dark;}
+.bg--gray-medium {background-color: $gray-medium;}
+.bg--gray-light {background-color: $gray-light;}
+
 .bg--color-1 {background-color: $color-1;}
 .bg--color-2 {background-color: $color-2;}
 .bg--color-3 {background-color: $color-3;}
@@ -20,6 +29,12 @@ $color-5: #00acc8;
 // Text
 .text--white {color: white;}
 .text--gg-gold {color: $gg-gold;}
+
+.text--color-1 {color: $color-1;}
+.text--color-2 {color: $color-2;}
+.text--color-3 {color: $color-3;}
+.text--color-4 {color: $color-4;}
+.text--color-5 {color: $color-5;}
 
 .text--uppercase {text-transform: uppercase;}
 

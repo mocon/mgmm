@@ -1,2 +1,48 @@
 // Report section styles
+.regional-comparison {
+    border-left: 7px solid $gray-light;
+    padding-left: 15px;
+}
 
+.regional-chart__list {
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: $gray-light;
+        position: absolute;
+        bottom: 13px;
+        left: 0;
+    }
+}
+
+.regional-chart__item {
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+
+.regional-chart__item-score {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 30px;
+    z-index: 100;
+
+    &:before {
+        content: '';
+        width: 1px;
+        height: 15px;
+        background-color: $gray-light;
+        position: absolute;
+        left: 50%;
+        top: -22px;
+    }
+}
