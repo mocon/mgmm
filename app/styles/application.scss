@@ -1,3 +1,36 @@
+// Color palette
+$gg-gold: #fcb420;
+$gg-gray: #818182;
+
+$color-1: #f0515a;
+$color-2: #00b4aa;
+$color-3: #545487;
+$color-4: #f36b23;
+$color-5: #00acc8;
+
+// Backgrounds
+.bg--white {background-color: white;}
+.bg--trans-dark-1 {background-color: rgba(0,0,0,0.8);}
+.bg--color-1 {background-color: $color-1;}
+.bg--color-2 {background-color: $color-2;}
+.bg--color-3 {background-color: $color-3;}
+.bg--color-4 {background-color: $color-4;}
+.bg--color-5 {background-color: $color-5;}
+
+// Text
+.text--white {color: white;}
+.text--gg-gold {color: $gg-gold;}
+
+.text--uppercase {text-transform: uppercase;}
+
+.-text-center--sm {
+  @media (max-width: 767px) {text-align: center;}
+}
+
+// Images
+.img--full-width {
+  max-width: 100%;
+}
+
 // Component-specific theming
-@import 'theme/_header';
-@import 'theme/_footer';
+@import 'theme/_report-section';
