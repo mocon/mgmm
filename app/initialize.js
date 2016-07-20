@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     render((
         <Router history={browserHistory}>
             <Route path="/" component={Home} />
-            <Route path="/report" component={Report} />
-            <Route path="/review" component={Review} />
-            <Route path="/export" component={Export} />
+            <Route path="/create-report" component={Report} />
+            <Route path="/review-report" component={Review} />
+            <Route path="/export-report" component={Export} />
         </Router>
     ), document.querySelector('[data-ui-role="content"]'));
 });
