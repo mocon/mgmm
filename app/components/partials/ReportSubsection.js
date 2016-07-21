@@ -1,6 +1,6 @@
 import React from 'react'
 
-var RegionalComparison = React.createClass({
+var ReportSubsection = React.createClass({
     getInitialState: function() {
         return {
             showAllSections: false
@@ -14,7 +14,7 @@ var RegionalComparison = React.createClass({
             <div>
                 <div className="gds-layout__column--md-12">
                     <div className={`regional-comparison border-${theme} -m-b-4`}>
-                        <h5 className={`text--${theme} gds-text--bold text--uppercase -m-b-2`}>{tier1.name} ({tier1.id})</h5>
+                        <h5 data-score-before={tier1.value} className={`tier-1-name gds-text--bold text--uppercase -p-b-2 -m-b-3`}>{tier1.name} ({tier1.id})</h5>
                         <div className="regional-chart -block">
                             <ul className="regional-chart__list">
 
@@ -38,4 +38,4 @@ var RegionalComparison = React.createClass({
     }
 });
 
-module.exports = RegionalComparison;
+module.exports = ReportSubsection;

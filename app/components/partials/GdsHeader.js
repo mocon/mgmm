@@ -14,7 +14,7 @@ let GdsHeader = React.createClass({
         return (
             <header className="gds-page-header">
                 <div className="gds-page-header__product-bar">
-                    <h6 className="gds-page-header__product-name">Report Builder</h6>
+                    <h6 className="gds-page-header__product-name">Data Explorer</h6>
                     <img className="gds-page-header__logo" src="https://ds.gumgum.com/images/svg/logo-white.svg"/>
                 </div>
                 <div className="gds-page-header__nav-bar">
