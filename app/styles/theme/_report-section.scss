@@ -26,6 +26,7 @@
 }
 
 .regional-chart__item-score {
+    font-family: "aspiraregular";
     position: relative;
     display: inline-block;
     margin: 0 auto;
@@ -33,7 +34,7 @@
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    line-height: 30px;
+    line-height: 31px;
     z-index: 100;
 
     &:before {

@@ -21,8 +21,15 @@ var ReportSection = React.createClass({
                 ]
             },
             chartOptions = {
+                scaleFontFamily: "aspiralight",
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                scaleLabel: function(object) {
+                    return "  " + object.value;
+                },
+                responsive: true,
+                pointDot: false,
+                showTooltips: false
             },
             regionsInSection = [
                 {name: "Pacific"},
