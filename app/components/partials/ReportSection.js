@@ -103,7 +103,7 @@ var ReportSection = React.createClass({
                                 })}
                             </div>
                             <div className="gds-layout__column--md-12">
-                                <h3 className="gds-text--header-sm gds-text--bold text--uppercase -m-b-2">Analysis</h3>
+                                <h3 className="gds-text--header-sm gds-text--bold text--uppercase -m-t-3 -m-b-2">Analysis</h3>
                                 <p>[Regional analysis] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
                             </div>
                         </div>

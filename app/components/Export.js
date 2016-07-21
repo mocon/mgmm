@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 var Export = React.createClass({
     componentDidMount: function() {
         window.scrollTo(0, 0);
-        document.body.className = '';
+        document.body.className = 'bg--white';
     },
     render: function() {
         return (

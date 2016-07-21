@@ -2,13 +2,27 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import ReportSection from './partials/ReportSection';
+import GdsModal from './partials/GdsModal';
+import GdsCornerContent from './partials/GdsCornerContent';
 
 var BarChart = require('react-chartjs').Bar;
 
 var Review = React.createClass({
+    getInitialState: function() {
+        return {
+            showModal: false
+        }
+    },
     componentDidMount: function() {
         window.scrollTo(0, 0);
-        document.body.className = 'bg--white';
+        document.body.className = 'gg-theme-blue bg--white';
+    },
+    _toggleModal: function() {
+        let _this = this,
+            current = _this.state.showModal,
+            opposite = !current;
+
+        _this.setState({showModal: opposite});
     },
     render: function() {
         let reportType = "Advertising";
@@ -74,6 +88,12 @@ var Review = React.createClass({
                 </section>
 
                 {/* End of sections */}
+
+                {/* Modal for saving report and generating link */}
+                <GdsModal display={this.state.showModal} toggleModal={this._toggleModal} />
+
+                {/* Corner-content */}
+                <GdsCornerContent toggleModal={this._toggleModal} />
             </div>
         );
     }

@@ -2,8 +2,6 @@ import React from 'react'
 
 var RegionalComparison = React.createClass({
     render: function() {
-
-
         return (
             <div className="gds-layout__column--md-12 gds-layout__column--lg-6">
                 <div className="regional-comparison -m-b-3">
