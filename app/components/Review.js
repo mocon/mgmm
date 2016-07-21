@@ -61,7 +61,8 @@ var Review = React.createClass({
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center--sm -m-b-3">
                                 <h3 className="gds-text--header-sm gds-text--bold -m-b-3 text--uppercase">About this report</h3>
-                                <p>[Description] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem. In molestie felis at massa posuere fermentum. Maecenas quam leo, dapibus at massa vitae, ornare venenatis lacus. Vivamus massa mi, aliquet vel pharetra at, pellentesque ut lacus. Phasellus convallis, tellus a dignissim vehicula, ligula sapien fermentum massa, sit amet consequat justo odio vitae mauris. Curabitur pretium varius varius.</p>
+                                <p className="-m-b-3">[Description] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem. In molestie felis at massa posuere fermentum. Maecenas quam leo, dapibus at massa vitae, ornare venenatis lacus. Vivamus massa mi, aliquet vel pharetra at, pellentesque ut lacus. Phasellus convallis, tellus a dignissim vehicula, ligula sapien fermentum massa, sit amet consequat justo odio vitae mauris. Curabitur pretium varius varius.</p>
+                                <p>Explain how the 1-99 scores are calculated here.</p>
                             </div>
                         </div>
                     </div>
@@ -86,8 +87,6 @@ var Review = React.createClass({
                         </div>
                     </div>
                 </section>
-
-                {/* End of sections */}
 
                 {/* Modal for saving report and generating link */}
                 <GdsModal display={this.state.showModal} toggleModal={this._toggleModal} />

@@ -1,12 +1,24 @@
 import React from 'react'
 
-import RegionalComparison from './RegionalComparison';
+import ReportSubsection from './ReportSubsection';
 
 var BarChart = require('react-chartjs').Bar;
 
 var ReportSection = React.createClass({
+    getInitialState: function() {
+        return {
+            shouldShowAllCats: false
+        }
+    },
+    _showAllCats: function() {
+        let _this = this;
+
+        _this.setState({shouldShowAllCats: true});
+    },
     render: function() {
-        var themeId = this.props.themeId,
+        var shouldShowAllCats = this.state.shouldShowAllCats,
+            showAllCats = this._showAllCats,
+            themeId = this.props.themeId,
             themeName = this.props.themeClassName,
             themeColors = ["#f0515a", "#00b4aa", "#545487", "#f36b23", "#00acc8"],
             chartData = {
@@ -31,15 +43,130 @@ var ReportSection = React.createClass({
                 pointDot: false,
                 showTooltips: false
             },
-            regionsInSection = [
-                {name: "Pacific"},
-                {name: "Mountain"},
-                {name: "Central"},
-                {name: "Atlantic"}
+            categories = [ // Pass these as props
+                {
+                    "id": "IAB7",
+                    "name": "Automotive",
+                    "subcats": [{
+                        "id": "IAB7-1",
+                        "name": "Alternative Medicine",
+                        "value": 97
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 92
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 85
+                    },
+                    {
+                        "id": "IAB7-3",
+                        "name": "Alternative Medicine",
+                        "value": 78
+                    }]
+                },
+                {
+                    "id": "IAB7",
+                    "name": "Automotive",
+                    "subcats": [{
+                        "id": "IAB7-1",
+                        "name": "Alternative Medicine",
+                        "value": 97
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 92
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 85
+                    },
+                    {
+                        "id": "IAB7-3",
+                        "name": "Alternative Medicine",
+                        "value": 78
+                    }]
+                },
+                {
+                    "id": "IAB7",
+                    "name": "Automotive",
+                    "subcats": [{
+                        "id": "IAB7-1",
+                        "name": "Alternative Medicine",
+                        "value": 97
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 92
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 85
+                    },
+                    {
+                        "id": "IAB7-3",
+                        "name": "Alternative Medicine",
+                        "value": 78
+                    }]
+                },
+                {
+                    "id": "IAB7",
+                    "name": "Automotive",
+                    "subcats": [{
+                        "id": "IAB7-1",
+                        "name": "Alternative Medicine",
+                        "value": 75
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 61
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 55
+                    },
+                    {
+                        "id": "IAB7-3",
+                        "name": "Alternative Medicine",
+                        "value": 45
+                    }]
+                },
+                {
+                    "id": "IAB7",
+                    "name": "Automotive",
+                    "subcats": [{
+                        "id": "IAB7-1",
+                        "name": "Alternative Medicine",
+                        "value": 62
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 53
+                    },
+                    {
+                        "id": "IAB7-2",
+                        "name": "Alternative Medicine",
+                        "value": 45
+                    },
+                    {
+                        "id": "IAB7-3",
+                        "name": "Alternative Medicine",
+                        "value": 22
+                    }]
+                }
             ];
 
         // TODO: Pass in [category name] & [analysis] via props
-
         return (
             <div>
                 {/* Colored header, needs [category name] */}
@@ -47,7 +174,7 @@ var ReportSection = React.createClass({
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center">
-                                <h3 className="gds-text--header-md gds-text--bold text--uppercase">[Category name] goes here</h3>
+                                <h3 className="gds-text--header-md gds-text--bold text--uppercase">[Campaign name]</h3>
                             </div>
                         </div>
                     </div>
@@ -58,7 +185,7 @@ var ReportSection = React.createClass({
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center">
-                                <h3 className="gds-text--header-sm gds-text--bold text--uppercase">National</h3>
+                                <h3 className="gds-text--header-sm gds-text--bold text--uppercase">Tier I IAB Categories</h3>
                             </div>
                         </div>
                     </div>
@@ -71,7 +198,7 @@ var ReportSection = React.createClass({
                             <div className="gds-layout__column--md-8 -m-b-4-sm">
                                 <BarChart data={chartData} options={chartOptions} height="300" />
                             </div>
-                            <div className="gds-layout__column--md-4">
+                            <div className="gds-layout__column--md-4 -p-l-4">
                                 <h3 className="gds-text--header-sm gds-text--bold text--uppercase -m-b-2">Analysis</h3>
                                 <p>[National analysis] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
                             </div>
@@ -84,7 +211,7 @@ var ReportSection = React.createClass({
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center">
-                                <h3 className="gds-text--header-sm gds-text--bold text--uppercase">Regional</h3>
+                                <h3 className="gds-text--header-sm gds-text--bold text--uppercase">Tier II IAB Subcategories</h3>
                             </div>
                         </div>
                     </div>
@@ -95,16 +222,41 @@ var ReportSection = React.createClass({
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--md-12 -m-b-3">
+
                                 {/* Loop through regional comparisons in report and render them */}
-                                {regionsInSection.map(function(section, i) {
-                                    return (
-                                        <RegionalComparison key={i} name={section.name} theme={themeName} />
-                                    )
+                                {categories.map(function(category, i) {
+                                    if (shouldShowAllCats) {
+                                        {/* Show all categories */}
+                                        return (
+                                            <ReportSubsection key={i} theme={themeName} category={category} />
+                                        )
+                                    } else {
+                                        {/* Show only top 2, then "View all", then bottom 2 */}
+                                        if (i === 0) {
+                                            return (
+                                                <ReportSubsection key={i} theme={themeName} category={category} />
+                                            )
+                                        }
+                                        if (i === 1) {
+                                            return (
+                                                <div>
+                                                    <ReportSubsection key={i} theme={themeName} category={category} />
+                                                    <button onClick={showAllCats} className="gds-button gds-button--block gds-button--default text--gray-medium -m-h-2 -m-b-4">Show All Categories</button>
+                                                </div>
+                                            )
+                                        }
+                                        if (i === categories.length - 2 || i === categories.length - 1) {
+                                            return (
+                                                <ReportSubsection key={i} theme={themeName} category={category} />
+                                            )
+                                        }
+                                    }
                                 })}
+
                             </div>
                             <div className="gds-layout__column--md-12">
                                 <h3 className="gds-text--header-sm gds-text--bold text--uppercase -m-t-3 -m-b-2">Analysis</h3>
-                                <p>[Regional analysis] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
+                                <p className="-p-b-6">[Regional analysis] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
                             </div>
                         </div>
                     </div>

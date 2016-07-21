@@ -5,7 +5,7 @@ var GdsCornerContent = React.createClass({
     getInitialState: function() {
         return {
             side: "gds-corner-content--right",
-            shown: "gds-corner-content--shown"
+            shown: ""
         }
     },
     _toggleSide: function() {
@@ -31,11 +31,11 @@ var GdsCornerContent = React.createClass({
     render: function() {
         return (
             <div className={`gds-corner-content ${this.state.side} ${this.state.shown}`}>
-                <div className="gds-corner-content__header">
+                <div onClick={this._toggleShown} className="gds-corner-content__header">
                     <h4 className="gds-corner-content__title">Save & Share Link</h4>
                     <div className="gds-corner-content__controls">
-                        <button onClick={this._toggleSide} className="gds-corner-content__button"><i className="fa fa-arrows-h"></i></button>
-                        <button onClick={this._toggleShown} className="gds-corner-content__button"><i className="fa fa-arrows-v"></i></button>
+                        {/*<button onClick={this._toggleSide} className="gds-corner-content__button"><i className="fa fa-arrows-h"></i></button>*/}
+                        <button className="gds-corner-content__button"><i className="fa fa-arrows-v"></i></button>
                     </div>
                 </div>
                 <div className="gds-corner-content__block -p-a-3">
