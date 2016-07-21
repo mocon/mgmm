@@ -17,9 +17,9 @@ var GdsSlideNav = React.createClass({
                         <li className="gds-slide-nav__list-item gds-slide-nav__list-item--primary">
                             <Link to="/review-report" className="gds-slide-nav__link">Review Report</Link>
                         </li>
-                        <li className="gds-slide-nav__list-item gds-slide-nav__list-item--primary">
+                        {/* <li className="gds-slide-nav__list-item gds-slide-nav__list-item--primary">
                             <Link to="/export-report" className="gds-slide-nav__link">Export Report</Link>
-                        </li>
+                        </li>*/}
                     </ul>
                 </div>
             </nav>

@@ -47,5 +47,10 @@ $color-5: #00acc8;
   max-width: 100%;
 }
 
+// Links
+.no-underline {
+  text-decoration: none !important;
+}
+
 // Component-specific theming
 @import 'theme/_report-section';

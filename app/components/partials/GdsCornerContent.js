@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router';
 
 var GdsCornerContent = React.createClass({
     getInitialState: function() {
@@ -39,6 +40,7 @@ var GdsCornerContent = React.createClass({
                 </div>
                 <div className="gds-corner-content__block -p-a-3">
                     <button onClick={this.props.toggleModal} className="gds-button gds-button--primary gds-button--block">Generate Link</button>
+                    <Link className="no-underline" to="/"><button onClick={this.props.toggleModal} className="gds-button gds-button--link gds-button--block">Back to Reports</button></Link>
                 </div>
             </div>
         );
