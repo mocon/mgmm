@@ -2,6 +2,9 @@
 $gg-gold: #fcb420;
 $gg-gray: #818182;
 
+$gg-green: #45BF55;
+$gg-red: #f0515a;
+
 $gray-dark: #413f41;
 $gray-medium: #808183;
 $gray-light: #ccc;
@@ -26,8 +29,16 @@ $color-5: #00acc8;
 .bg--color-4 {background-color: $color-4;}
 .bg--color-5 {background-color: $color-5;}
 
+// Borders
+.border-color-1 {border-color: $color-1;}
+.border-color-2 {border-color: $color-2;}
+.border-color-3 {border-color: $color-3;}
+.border-color-4 {border-color: $color-4;}
+.border-color-5 {border-color: $color-5;}
+
 // Text
 .text--white {color: white;}
+.text--gray-light {color: $gray-light !important;}
 .text--gg-gold {color: $gg-gold;}
 
 .text--color-1 {color: $color-1;}
@@ -50,6 +61,15 @@ $color-5: #00acc8;
 // Links
 .no-underline {
   text-decoration: none !important;
+}
+
+// Corner-content
+.gds-corner-content {
+  z-index: 700;
+}
+
+.gds-corner-content__header {
+  cursor: pointer;
 }
 
 // Component-specific theming
