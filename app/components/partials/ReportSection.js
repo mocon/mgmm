@@ -45,8 +45,6 @@ var ReportSection = React.createClass({
                 showTooltips: false
             };
 
-        console.log(section);
-
         // TODO: Pass in [category name] & [analysis] via props
         return (
             <div>
@@ -55,7 +53,7 @@ var ReportSection = React.createClass({
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center">
-                                <h3 className="gds-text--header-md gds-text--bold text--uppercase">[Campaign name]</h3>
+                                <h3 className="gds-text--header-md gds-text--bold text--uppercase">{section.campaignName} ({section.campaignId})</h3>
                             </div>
                         </div>
                     </div>

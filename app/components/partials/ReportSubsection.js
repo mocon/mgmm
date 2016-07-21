@@ -18,7 +18,16 @@ var RegionalComparison = React.createClass({
                         <div className="regional-chart -block">
                             <ul className="regional-chart__list">
 
-
+                                {/* Loop through subCategories in report and render them */}
+                                {tier1.tier2s.map(function(tier2, i) {
+                                    return (
+                                        <li key={i} className="regional-chart__item">
+                                            <h3 className="gds-text--bold -ellipsis">{tier2.name}</h3>
+                                            <p className="-m-b-2">{tier2.id}</p>
+                                            <div className={`regional-chart__item-score bg--${theme} text--white`} data-score={tier2.value}>{tier2.value}</div>
+                                        </li>
+                                    )
+                                })}
 
                             </ul>
                         </div>
