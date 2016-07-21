@@ -47,19 +47,8 @@
     border-radius: 15px;
     line-height: 31px;
     z-index: 100;
-
-    // &:before {
-    //     content: '';
-    //     width: 1px;
-    //     height: 15px;
-    //     background-color: $gray-light;
-    //     position: absolute;
-    //     left: 50%;
-    //     top: -22px;
-    // }
 }
 
-// Color coded loop
 // Colored by value
 @for $i from 0 through 50 {
     [data-score="#{$i}"] {
