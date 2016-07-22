@@ -13,6 +13,7 @@
     "prod": "brunch build --production"
   },
   "dependencies": {
+    "axios": "^0.13.1",
     "body-parser": "^1.15.2",
     "chart.js": "^1.1.1",
     "cors": "^2.7.1",
