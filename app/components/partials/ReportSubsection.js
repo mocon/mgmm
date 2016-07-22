@@ -13,8 +13,7 @@ var ReportSubsection = React.createClass({
     },
     render: function() {
         let tier1 = this.props.tier1,
-            theme = this.props.theme,
-            shouldAllSubCats = this._showAllSubcats;
+            theme = this.props.theme;
 
         return (
             <div>
@@ -33,10 +32,6 @@ var ReportSubsection = React.createClass({
                                             <div className={`regional-chart__item-score bg--${theme} text--white`} data-score={tier2.value}>{tier2.value}</div>
                                         </li>
                                     )
-
-
-
-
                                 })}
 
                             </ul>
