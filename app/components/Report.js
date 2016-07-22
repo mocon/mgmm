@@ -4,18 +4,22 @@ import Axios from 'axios';
 
 import GdsLayout from './layout/GdsLayout';
 
-var apiPath = 'http://192.168.74.160:9090/iab-reports',
-    latestJson;
+var apiPath = 'http://192.168.74.160:9090/iab-reports';
 
 var Report = React.createClass({
     getInitialState: function() {
         return {
-            json: ''
+            loadingStyle: {display: 'none'}
         }
     },
     componentDidMount: function() {
         window.scrollTo(0, 0);
         document.body.className += ' -has-page-header gg-theme-blue -has-slide-nav';
+    },
+    _isLoading: function() {
+        let _this = this;
+        console.log('started loading');
+        _this.setState({loadingStyle: {display: 'block'}});
     },
     _sendApiRequest: function(e) {
         let _this = this,
@@ -31,7 +35,8 @@ var Report = React.createClass({
             };
 
         e.preventDefault();
-        // get section details
+        _this._isLoading();
+
         Axios.post(apiPath, postBody, config)
         .then(function (response) {
           _this.setState({json: response.data});
@@ -47,6 +52,12 @@ var Report = React.createClass({
 
         return (
             <div>
+                {/* Loading animation */}
+                <div className="loading-bg" style={this.state.loadingStyle}>
+                    <div className="gds-loading">
+                      <div className="gds-loading__dot"></div>
+                    </div>
+                </div>
                 <GdsLayout pageName={pageName}>
                     <section>
                         <div className="gds-layout__column--md-12">
