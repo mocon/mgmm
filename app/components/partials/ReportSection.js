@@ -21,7 +21,7 @@ var ReportSection = React.createClass({
             showAllCats = this._showAllCats,
             themeId = this.props.themeId,
             themeName = this.props.themeClassName,
-            themeColors = ["#f0515a", "#00b4aa", "#545487", "#f36b23", "#00acc8"],
+            themeColors = ["#00acc8", "#545487", "#00b4aa", "#f36b23", "#f0515a"],
             chartData = {
                 labels: section.catNames, // TODO: Pass this in via props
                 datasets: [
@@ -79,7 +79,7 @@ var ReportSection = React.createClass({
                             </div>
                             <div className="gds-layout__column--md-4 -p-l-4">
                                 <h3 className="gds-text--header-sm gds-text--bold text--uppercase -m-b-2">Analysis</h3>
-                                <p>[National analysis] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
+                                <p>Analysis goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ var ReportSection = React.createClass({
                             </div>
                             <div className="gds-layout__column--md-12">
                                 <h3 className="gds-text--header-sm gds-text--bold text--uppercase -m-t-3 -m-b-2">Analysis</h3>
-                                <p className="-p-b-6">[Regional analysis] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
+                                <p className="-p-b-6">Analysis goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem.</p>
                             </div>
                         </div>
                     </div>

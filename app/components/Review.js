@@ -34,6 +34,8 @@ var Review = React.createClass({
             this._backToCreateReport();
         }
 
+        console.log(mylesJson);
+
         return (
             <div>
                 {/* Report title section, needs [client name], [report subtitle], & [report type] */}
@@ -44,9 +46,9 @@ var Review = React.createClass({
                                 <img className="img--full-width" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--color.svg" alt="GumGum Visual Intelligence" />
                             </div>
                             <div className="gds-layout__column--md-8 -text-center--sm">
-                                <p className="-block text--gg-gold text--uppercase">[{reportType}] audit for</p>
-                                <h1 className="gds-text--header-lg gds-text--bold -block text--white">[Report Client Name] goes here</h1>
-                                <h4 className="gds-text--header-sm gds-text--bold -block text--white">[Report Subtitle] goes here</h4>
+                                <p className="-block text--gg-gold gds-text--bold text--uppercase">{reportType} audit for</p>
+                                <h1 className="gds-text--header-lg gds-text--bold -block text--white">Report Client Name goes here</h1>
+                                <h4 className="gds-text--header-sm gds-text--bold -block text--white">Report Subtitle goes here</h4>
                             </div>
                             <div className="gds-layout__column--md-4 gds-layout__hidden-sm-down -text-right">
                                 <img className="img--full-width" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--color.svg" alt="GumGum Visual Intelligence" />
@@ -61,7 +63,7 @@ var Review = React.createClass({
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center--sm -m-b-3">
                                 <h3 className="gds-text--header-sm gds-text--bold -m-b-3 text--uppercase">About this report</h3>
-                                <p className="-m-b-3">[Description] goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem. In molestie felis at massa posuere fermentum. Maecenas quam leo, dapibus at massa vitae, ornare venenatis lacus. Vivamus massa mi, aliquet vel pharetra at, pellentesque ut lacus. Phasellus convallis, tellus a dignissim vehicula, ligula sapien fermentum massa, sit amet consequat justo odio vitae mauris. Curabitur pretium varius varius.</p>
+                                <p className="-m-b-3">Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ornare tortor nec rutrum. Fusce accumsan ex felis, pretium ornare risus lobortis vel. Vivamus at enim eleifend, hendrerit turpis eget, volutpat lorem. In molestie felis at massa posuere fermentum. Maecenas quam leo, dapibus at massa vitae, ornare venenatis lacus. Vivamus massa mi, aliquet vel pharetra at, pellentesque ut lacus. Phasellus convallis, tellus a dignissim vehicula, ligula sapien fermentum massa, sit amet consequat justo odio vitae mauris. Curabitur pretium varius varius.</p>
                                 <p>Explain how the 1-99 scores are calculated here.</p>
                             </div>
                         </div>
@@ -78,7 +80,7 @@ var Review = React.createClass({
                 })}
 
                 {/* Footer logo section, doesn't need any data */}
-                <section className="-p-a-4 bg--color-1">
+                <section className="-p-a-4 bg--color-5">
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center">

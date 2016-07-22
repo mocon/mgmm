@@ -18,7 +18,7 @@ var Report = React.createClass({
     },
     _isLoading: function() {
         let _this = this;
-        console.log('started loading');
+
         _this.setState({loadingStyle: {display: 'block'}});
     },
     _sendApiRequest: function(e) {
