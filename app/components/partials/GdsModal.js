@@ -4,7 +4,7 @@ var GdsModal = React.createClass({
     render: function() {
         let shouldShowModal = this.props.display,
             modalClass = shouldShowModal ? "gds-modal__overlay gds-modal--shown" : "gds-modal__overlay",
-            clientName = window.clientName,
+            clientName = window.clientName || "Client Name",
             textareaStyle = {height: "200px"};
 
         return (

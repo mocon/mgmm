@@ -43,7 +43,7 @@ var Review = React.createClass({
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 gds-layout__hidden-md-up -text-center -m-b-4">
-                                <img className="img--full-width" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--color.svg" alt="GumGum Visual Intelligence" />
+                                <img className="img--full-width" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--color_v2.svg" width="220" alt="GumGum Visual Intelligence" />
                             </div>
                             <div className="gds-layout__column--md-8 -text-center--sm">
                                 <p className="-block text--gg-gold gds-text--bold text--uppercase">{reportType} audit for</p>
@@ -51,7 +51,7 @@ var Review = React.createClass({
                                 <h4 className="gds-text--header-sm gds-text--bold -block text--white">{reportTitle}</h4>
                             </div>
                             <div className="gds-layout__column--md-4 gds-layout__hidden-sm-down -text-right">
-                                <img className="img--full-width" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--color.svg" alt="GumGum Visual Intelligence" />
+                                <img className="img--full-width" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--color_v2.svg" width="220" alt="GumGum Visual Intelligence" />
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ var Review = React.createClass({
                     <div className="gds-layout__container">
                         <div className="gds-layout__row">
                             <div className="gds-layout__column--sm-12 -text-center">
-                                <img className="footer-logo" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--white.svg" alt="GumGum Visual Intelligence" />
+                                <img className="footer-logo" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--white_v2.svg" width="220" alt="GumGum Visual Intelligence" />
                             </div>
                         </div>
                     </div>

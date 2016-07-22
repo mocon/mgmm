@@ -3,12 +3,18 @@ import React from 'react'
 var ReportSubsection = React.createClass({
     getInitialState: function() {
         return {
-            showAllSections: false
+            shouldShowAllSubCats: false
         }
+    },
+    _showAllSubcats: function() {
+        let _this = this;
+
+        _this.setState({shouldShowAllSubCats: true});
     },
     render: function() {
         let tier1 = this.props.tier1,
-            theme = this.props.theme;
+            theme = this.props.theme,
+            shouldAllSubCats = this._showAllSubcats;
 
         return (
             <div>
@@ -27,6 +33,10 @@ var ReportSubsection = React.createClass({
                                             <div className={`regional-chart__item-score bg--${theme} text--white`} data-score={tier2.value}>{tier2.value}</div>
                                         </li>
                                     )
+
+
+
+
                                 })}
 
                             </ul>

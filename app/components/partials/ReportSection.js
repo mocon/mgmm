@@ -104,7 +104,7 @@ var ReportSection = React.createClass({
 
                                 {/* Loop through regional comparisons in report and render them */}
                                 {section.tier1s.map(function(tier1, i) {
-                                    if (shouldShowAllCats) {
+                                    if (shouldShowAllCats || section.tier1s.length < 5) {
                                         {/* Show all categories */}
                                         return (
                                             <ReportSubsection key={i} theme={themeName} tier1={tier1} />
