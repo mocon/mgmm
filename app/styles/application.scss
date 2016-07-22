@@ -39,7 +39,7 @@ $color-5: #00acc8;
 .border-color-red {border-color: $gg-red;}
 
 // Text
-.text--white {color: white;}
+.text--white {color: white !important;}
 .text--gray-medium {color: $gray-medium !important;}
 .text--gray-light {color: $gray-light !important;}
 .text--gg-gold {color: $gg-gold;}
