@@ -28,13 +28,13 @@ var Review = React.createClass({
         browserHistory.push("/create-report");
     },
     render: function() {
-        let reportType = "Advertising";
+        let reportType = "Advertising",
+            clientName = window.clientName || "Client Name",
+            reportTitle = window.reportTitle || "Report Subtitle";
 
         if (!window.mylesJson) {
             this._backToCreateReport();
         }
-
-        console.log(mylesJson);
 
         return (
             <div>
@@ -47,8 +47,8 @@ var Review = React.createClass({
                             </div>
                             <div className="gds-layout__column--md-8 -text-center--sm">
                                 <p className="-block text--gg-gold gds-text--bold text--uppercase">{reportType} audit for</p>
-                                <h1 className="gds-text--header-lg gds-text--bold -block text--white">Report Client Name goes here</h1>
-                                <h4 className="gds-text--header-sm gds-text--bold -block text--white">Report Subtitle goes here</h4>
+                                <h1 className="gds-text--header-lg gds-text--bold -block text--white">{clientName}</h1>
+                                <h4 className="gds-text--header-sm gds-text--bold -block text--white">{reportTitle}</h4>
                             </div>
                             <div className="gds-layout__column--md-4 gds-layout__hidden-sm-down -text-right">
                                 <img className="img--full-width" src="https://c.gumgum.com/ads/com/mgmm/img/svg/gg-vi--color.svg" alt="GumGum Visual Intelligence" />

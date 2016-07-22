@@ -39,12 +39,14 @@ var Report = React.createClass({
 
         Axios.post(apiPath, postBody, config)
         .then(function (response) {
-          _this.setState({json: response.data});
-          window.mylesJson = response.data; // shame
-          browserHistory.push("/review-report"); // go to Review
+            _this.setState({json: response.data});
+            window.mylesJson = response.data; // shame
+            window.clientName = _this.refs.clientName.value;
+            window.reportTitle = _this.refs.reportTitle.value;
+            browserHistory.push("/review-report"); // go to Review
         })
         .catch(function (response) {
-          console.log('Error fetching JSON: ' + response);
+            console.log('Error fetching JSON: ' + response);
         });
     },
     render: function() {
@@ -66,10 +68,18 @@ var Report = React.createClass({
                         <div className="gds-layout__column--md-12">
                             <form ref="searchForm" onSubmit={this._sendApiRequest}>
                                 <div className="gds-form-group -m-b-3">
+                                    <label className="gds-form-group__label">Client/Intended Recipient Name</label>
+                                    <input className="gds-form-group__text-input" type="text" ref="clientName" placeholder="Client Name" />
+                                </div>
+                                <div className="gds-form-group -m-b-3">
+                                    <label className="gds-form-group__label">Report Title</label>
+                                    <input className="gds-form-group__text-input" type="text" ref="reportTitle" placeholder="Report Title" />
+                                </div>
+                                <div className="gds-form-group -m-b-4">
                                     <label className="gds-form-group__label">Campaign IDs, comma separated</label>
                                     <input className="gds-form-group__text-input" type="text" ref="campaignId" placeholder="Campaign ID" />
                                 </div>
-                                <button type="submit" className="gds-button gds-button--primary gds-button--lg">Generate Report</button>
+                                <button type="submit" className="gds-button gds-button--block gds-button--primary gds-button--lg">Generate Report</button>
                             </form>
                         </div>
                     </section>
