@@ -1,22 +1,69 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
+import Axios from 'axios';
 
 import GdsLayout from './layout/GdsLayout';
 
+var apiPath = 'http://192.168.74.160:9090/iab-reports',
+    latestJson;
+
 var Report = React.createClass({
+    getInitialState: function() {
+        return {
+            json: ''
+        }
+    },
     componentDidMount: function() {
         window.scrollTo(0, 0);
         document.body.className += ' -has-page-header gg-theme-blue -has-slide-nav';
     },
+    _sendApiRequest: function(e) {
+        let _this = this,
+            idsToSearch = _this.refs.campaignId.value,
+            array = idsToSearch.split(",").map(function(val){
+                return parseInt(val);
+            }),
+            postBody = {
+                "campaignIds": array
+            },
+            config = {
+                headers: {'Content-Type': 'application/json'}
+            };
+
+        e.preventDefault();
+        // get section details
+        Axios.post(apiPath, postBody, config)
+        .then(function (response) {
+          _this.setState({json: response.data});
+          window.mylesJson = response.data; // shame
+          browserHistory.push("/review-report"); // go to Review
+        })
+        .catch(function (response) {
+          console.log('Error fetching JSON: ' + response);
+        });
+    },
     render: function() {
-        let pageName = "Create Report";
+        let pageName = "New Report";
 
         return (
-            <GdsLayout pageName={pageName}>
-                <section>
-                    <p>Create Report</p>
-                </section>
-            </GdsLayout>
+            <div>
+                <GdsLayout pageName={pageName}>
+                    <section>
+                        <div className="gds-layout__column--md-12">
+                            <h1 className="gds-text--header-lg -m-b-4">Generate New Report</h1>
+                        </div>
+                        <div className="gds-layout__column--md-12">
+                            <form ref="searchForm" onSubmit={this._sendApiRequest}>
+                                <div className="gds-form-group -m-b-3">
+                                    <label className="gds-form-group__label">Campaign IDs, comma separated</label>
+                                    <input className="gds-form-group__text-input" type="text" ref="campaignId" placeholder="Campaign ID" />
+                                </div>
+                                <button type="submit" className="gds-button gds-button--primary gds-button--lg">Generate Report</button>
+                            </form>
+                        </div>
+                    </section>
+                </GdsLayout>
+            </div>
         );
     }
 });

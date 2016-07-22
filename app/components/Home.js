@@ -45,7 +45,9 @@ var Home = React.createClass({
             <GdsLayout pageName={pageName}>
                 <section>
                     <div className="gds-layout__column--md-12">
-                        <h1 className="gds-text--header-lg -m-b-4">All Reports</h1>
+                        <h1 className="gds-text--header-lg -m-b-4 -inline-block -float-left">All Reports</h1>
+                        <Link to="/create-report" className="gds-button gds-button--primary -float-right -m-t-1 -m-r-1 text--white no-underline">Generate New Report</Link>
+                        <div className="-clear-both"></div>
                     </div>
                     <ul className="grid-holder">
                         {/* Loop through "reports" and render them */}
